@@ -12,9 +12,11 @@
 
     <div id="root">
         <ul>
-            <li><a href="lists.html">Lists</a></li>
-            <li><a href="attribute-binding.html">Attribute Binding</a></li>
+            <li v-for="name in names" v-text="name"></li>
         </ul>
+
+        <input type="text" id="input" v-model="newName">
+        <button v-on:click="addName">Submit</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -24,11 +26,18 @@
         new Vue({
             el: '#root',
             data: {
-
+                newName: '',
+                names: ['joe', 'mary', 'chris', 'bella']
             },
 
             methods: {
+                addName() {
 
+                    this.names.push(this.newName);
+
+                    this.newName = '';
+
+                }
             },
 
         });

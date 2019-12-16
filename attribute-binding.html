@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUe Step by Step</title>
+    <style>
+        .color-red {
+            color: red;
+        }
+
+        .color-blue {
+            color: blue;
+        }
+
+        .is-loading {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root">
+        <h1 v-bind:class="className">Attribute Binding </h1>
+        <button v-bind:disabled="disabled" v-on:click="disableButton">{{ buttonText }}</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+        let app = new Vue({
+            el: '#root',
+            data: {
+                title: 'Now the title is set through JavaScript',
+                className: 'color-blue',
+                buttonText: 'Disable me',
+                disabled: false,
+            },
+
+            methods: {
+                disableButton() {
+                    this.buttonText = 'Disabled'
+                    this.disabled = true
+                }
+            }
+
+        });
+
+    </script>
+
+</html>
+
+</body>
