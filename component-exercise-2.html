@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+        <section class="section">
+            <div class="container">
+                <h1 class="title">
+                    Modal demo
+                </h1>
+
+                <modal v-show="showModal" v-on:close="showModal = false">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac, in mollis lectus.
+                    Donec sodales, arcu etsollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a
+                    neque.
+                </modal>
+
+                <button class="btn" v-on:click="showModal = true">Show Modal</button>
+
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="/component-exercise-2.js"></script>
+</body>
+
+</html>
